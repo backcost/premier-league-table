@@ -1,0 +1,83 @@
+* {
+    text-align: center;
+  }
+  
+  body {
+    font-family: "Roboto Mono", monospace;
+    min-height: 2000px;
+    background-image: url("https://www.gazetaesportiva.com/wp-content/uploads/imagem/2020/04/14/cbf.jpeg");
+    background-color: #111;
+    background-size: 100%;
+    background-position: initial;
+    background-repeat: repeat-y;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+  }
+  
+  .page-title {
+    color: black;
+    margin: 0 0 5px;
+  }
+  
+  .page-subtitle {
+    color: black;
+    margin-top: 5px;
+  }
+  
+  .page-logo {
+    width: 200px;
+  }
+  
+  .alura-logo {
+    width: 40px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  table {
+    border: 2px solid black;
+    border-collapse: collapse;
+  }
+  
+  h1 {
+    color: white;
+  }
+  
+  th,
+  tr,
+  td {
+    border: solid 1px black;
+    color: white;
+  }
+
+  .form-wrapper {
+    margin: 10px;
+    font-size: 14px;
+  }
+  
+  .form-wrapper input {
+    margin: 10px auto;
+    padding: 7px 5px;
+    border-radius: 7px;
+    font-weight: bold;
+  }
+  
+  .form-wrapper button {
+    color: black;
+    background: rgba(255, 238, 0, 0.349);
+    font-weight: bold;
+    padding: 7px 25px;
+    border-radius: 7px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .form-wrapper button:hover {
+    opacity: 0.8;
+  }
