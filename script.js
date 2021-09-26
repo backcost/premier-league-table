@@ -34,6 +34,7 @@ const reset = () => {
 }
 
 const printClubs = (clubs) => {
+    clubs.sort((a, b) => b.points - a.points)
     let element = ""
     for (let i = 0; i < clubs.length; i++) {
         element += 
@@ -103,21 +104,22 @@ const capitalizeFirst = (string) => {
     console.log(losses)
 } */
 
-let manchesterUnited = { name: "Manchester United", wins: 2, draws: 1, losses: 1, points: 0 }
-let arsenal = { name: "Arsenal", wins: 1, draws: 1, losses: 2, points: 0 }
-let chelsea = { name: "Chelsea", wins: 1, draws: 1, losses: 2, points: 0 }
-let liverpool = { name: "Liverpool", wins: 1, draws: 1, losses: 2, points: 0 }
-let manchesterCity = { name: "Manchester City", wins: 1, draws: 1, losses: 2, points: 0 }
-let brighton = { name: "Brighton and Hove Albion", wins: 1, draws: 1, losses: 2, points: 0 }
-let westHam = { name: "West Ham United", wins: 1, draws: 1, losses: 2, points: 0 }
-let astonVilla = { name: "Aston Villa", wins: 1, draws: 1, losses: 2, points: 0 }
-let brentford = { name: "Brentford", wins: 1, draws: 1, losses: 2, points: 0 }
-let tottenham = { name: "Tottenham Hotspur", wins: 1, draws: 1, losses: 2, points: 0 }
+let liverpool = { name: "Liverpool", wins: 4, draws: 2, losses: 0, points: 0 }
+let manchesterCity = { name: "Manchester City", wins: 4, draws: 1, losses: 1, points: 0 }
+let chelsea = { name: "Chelsea", wins: 4, draws: 1, losses: 1, points: 0 }
+let manchesterUnited = { name: "Manchester United", wins: 4, draws: 1, losses: 1, points: 0 }
+let everton = { name: "Everton", wins: 4, draws: 1, losses: 1, points: 0 }
+let brighton = { name: "Brighton and Hove Albion", wins: 4, draws: 0, losses: 1, points: 0 }
+let westHam = { name: "West Ham United", wins: 3, draws: 2, losses: 1, points: 0 }
+let astonVilla = { name: "Aston Villa", wins: 3, draws: 1, losses: 2, points: 0 }
+let brentford = { name: "Brentford", wins: 2, draws: 3, losses: 1, points: 0 }
+let arsenal = { name: "Arsenal", wins: 3, draws: 0, losses: 3, points: 0 }
+let tottenham = { name: "Tottenham Hotspur", wins: 3, draws: 0, losses: 3, points: 0 }
 
 
-let clubs = [manchesterUnited, arsenal, chelsea, liverpool, 
-    manchesterCity, brighton, westHam, astonVilla, brentford,
-    tottenham]
+
+let clubs = [liverpool, manchesterCity, chelsea, manchesterUnited, everton, 
+brighton, westHam, astonVilla, brentford, arsenal, tottenham]
 
 for (let club of clubs) {
     club.points = calculatePoints(club)
@@ -128,4 +130,5 @@ printClubs(clubs)
 /* Validar se todos os points estão fazendo sentido, tanto o 
 número de draws, quanto losses e vitórias com os demais 
 jogadores (impossível haver mais vitórias que losses, por exemplo)
+
 Adicionar a imagem de cada jogador */
