@@ -12,9 +12,9 @@ body {
 }
 
 .container {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.473);
   margin: 80px;
-  border-radius: 90px;
+  border-radius: 60px;
   text-align: center;
   padding: 30px;
   height: 100vh;

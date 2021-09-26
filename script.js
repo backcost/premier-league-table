@@ -38,7 +38,8 @@ const printClubs = (clubs) => {
     let element = ""
     for (let i = 0; i < clubs.length; i++) {
         element += 
-        `<tr><td>${clubs[i].name}</td>
+        `<tr><td><img src="${clubs[i].logo}" alt="${clubs[i].name} Logo"></td>
+        <td>${clubs[i].name}</td>
         <td>${clubs[i].wins}</td>
         <td>${clubs[i].draws}</td>
         <td>${clubs[i].losses}</td>
@@ -53,33 +54,44 @@ const printClubs = (clubs) => {
 
 const addClub = () => {
     let clubName = capitalizeFirst(document.getElementById('club__name').value)
+    let clubLogo = document.getElementById('club__logo').value
     if (clubName === '') {
-        console.error('name não digitado')
+        console.error('Club name is empty')
+    } else if (clubLogo === '') {
+        console.error('Logo URL is empty')
     } else {
         for (let i = 0; i < clubs.length; i++) {
             if (clubs[i].name === clubName) {
-                return console.error('Já existe uma equipe com esse name')
+                clearInput()
+                return console.error('This club is already on the table')
             }
         }
-        let newClub = { name: clubName, wins: 0, draws: 0, losses: 0, points: 0 }
+        let newClub = { name: clubName, wins: 0, draws: 0, losses: 0, points: 0, logo: clubLogo }
         clubs.push(newClub)
         printClubs(clubs)
     }
+    clearInput()
 }
 
 const removeClub = () => {
     let clubName = capitalizeFirst(document.getElementById('club__name').value)
     if (clubName === '') {
-        console.error('name não digitado')
+        console.error('Club name is empty')
     } else {
         for (let i = 0; i < clubs.length; i++) {
             if (clubs[i].name === clubName) {
+                clearInput()
                 clubs.splice(i, 1)
                 return printClubs(clubs)
             }
         }
-        console.error('name não encontrado')
+        console.error(`There's not a club called ${clubName}`)
     }
+}
+
+const clearInput = () => {
+    document.getElementById('club__name').value = ''
+    document.getElementById('club__logo').value = ''
 }
 
 const capitalizeFirst = (string) => {
@@ -104,17 +116,17 @@ const capitalizeFirst = (string) => {
     console.log(losses)
 } */
 
-let liverpool = { name: "Liverpool", wins: 4, draws: 2, losses: 0, points: 0 }
-let manchesterCity = { name: "Manchester City", wins: 4, draws: 1, losses: 1, points: 0 }
-let chelsea = { name: "Chelsea", wins: 4, draws: 1, losses: 1, points: 0 }
-let manchesterUnited = { name: "Manchester United", wins: 4, draws: 1, losses: 1, points: 0 }
-let everton = { name: "Everton", wins: 4, draws: 1, losses: 1, points: 0 }
-let brighton = { name: "Brighton and Hove Albion", wins: 4, draws: 0, losses: 1, points: 0 }
-let westHam = { name: "West Ham United", wins: 3, draws: 2, losses: 1, points: 0 }
-let astonVilla = { name: "Aston Villa", wins: 3, draws: 1, losses: 2, points: 0 }
-let brentford = { name: "Brentford", wins: 2, draws: 3, losses: 1, points: 0 }
-let arsenal = { name: "Arsenal", wins: 3, draws: 0, losses: 3, points: 0 }
-let tottenham = { name: "Tottenham Hotspur", wins: 3, draws: 0, losses: 3, points: 0 }
+let liverpool = { name: "Liverpool", wins: 4, draws: 2, losses: 0, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t14.png" }
+let manchesterCity = { name: "Manchester City", wins: 4, draws: 1, losses: 1, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t43.png" }
+let chelsea = { name: "Chelsea", wins: 4, draws: 1, losses: 1, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t8.png" }
+let manchesterUnited = { name: "Manchester United", wins: 4, draws: 1, losses: 1, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t1.png" }
+let everton = { name: "Everton", wins: 4, draws: 1, losses: 1, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t11.png" }
+let brighton = { name: "Brighton and Hove Albion", wins: 4, draws: 0, losses: 1, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t36.png" }
+let westHam = { name: "West Ham United", wins: 3, draws: 2, losses: 1, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t21.png" }
+let astonVilla = { name: "Aston Villa", wins: 3, draws: 1, losses: 2, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t7.png" }
+let brentford = { name: "Brentford", wins: 2, draws: 3, losses: 1, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t94.png" }
+let arsenal = { name: "Arsenal", wins: 3, draws: 0, losses: 3, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t3.png" }
+let tottenham = { name: "Tottenham Hotspur", wins: 3, draws: 0, losses: 3, points: 0, logo: "https://resources.premierleague.com/premierleague/badges/25/t6.png" }
 
 
 
@@ -130,5 +142,4 @@ printClubs(clubs)
 /* Validar se todos os points estão fazendo sentido, tanto o 
 número de draws, quanto losses e vitórias com os demais 
 jogadores (impossível haver mais vitórias que losses, por exemplo)
-
-Adicionar a imagem de cada jogador */
+*/
