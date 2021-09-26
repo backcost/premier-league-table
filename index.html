@@ -1,36 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>
-        Imersão Dev - Aula 06
-    </title>
+    <title>Premier League</title>
 </head>
-
 <body>
-  <h1>Classificação - Brasileirão</h1>
-
-  <table style="width:100%">
-    <thead>
-      <tr>
-        <th>Nome</th>
-        <th>Vitórias</th>
-        <th>Empates</th>
-        <th>Derrotas</th>
-        <th>Pontos</th>
-        <th colspan=3>Ações</th>
-      </tr>
-    </thead>
-    <tbody id="tabelaEquipes">
-  </table>
-  <div class="form-wrapper">
-    <input type="text" id="time__nome" name="time__nome" placeholder="Insira o nome da equipe" required>
-    <button onClick="adicionarTime()">Adicionar Equipe</button>
-    <button onClick="removerTime()">Remover Equipe</button>
-  </div>
-  <button class="botao__zerar" onClick="zerar()">Zerar Tudo</button>
-  <script src="script.js"></script>
-</body>
-
+    <h1>Premier League Table</h1>
+    <table style="width:100%">
+      <thead>
+        <tr>
+          <th>Club</th>
+          <th>Won</th>
+          <th>Drawn</th>
+          <th>Lost</th>
+          <th>Points</th>
+          <th colspan=3>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaEquipes">
+    </table>
+    <div class="form-wrapper">
+      <input type="text" id="time__nome" name="time__nome" placeholder="Insert Club Name" required>
+      <button onClick="adicionarTime()">Add Club</button>
+      <button onClick="removerTime()">Remove Club</button>
+    </div>
+    <button class="botao__zerar" onClick="zerar()">Reset Points</button>
+    <script src="script.js"></script>
+  </body>
 </html>

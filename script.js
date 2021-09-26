@@ -42,9 +42,9 @@ function exibeEquipesNaTela(equipes) {
         <td>${equipes[i].empates}</td>
         <td>${equipes[i].derrotas}</td>
         <td>${equipes[i].pontos}</td>
-        <td><button onClick="adicionarVitoria(${i})">Vitória</button></td>
-        <td><button onClick="adicionarEmpate(${i})">Empate</button></td>
-        <td><button onClick="adicionarDerrota(${i})">Derrota</button></td></tr>`
+        <td><button onClick="adicionarVitoria(${i})">Victory</button></td>
+        <td><button onClick="adicionarEmpate(${i})">Draw</button></td>
+        <td><button onClick="adicionarDerrota(${i})">Defeat</button></td></tr>`
     }
     let tabelaEquipes = document.getElementById("tabelaEquipes")
     tabelaEquipes.innerHTML = elemento
@@ -103,9 +103,9 @@ function capitalizeFirst(string) {
     console.log(derrotas)
 } */
 
-let flamengo = { nome: "Flamengo", vitorias: 2, empates: 1, derrotas: 1, pontos: 0 }
-let vasco = { nome: "Vasco", vitorias: 1, empates: 1, derrotas: 2, pontos: 0 }
-let fluminense = { nome: "Fluminense", vitorias: 1, empates: 1, derrotas: 2, pontos: 0 }
+let flamengo = { nome: "Manchester United", vitorias: 2, empates: 1, derrotas: 1, pontos: 0 }
+let vasco = { nome: "Arsenal", vitorias: 1, empates: 1, derrotas: 2, pontos: 0 }
+let fluminense = { nome: "Chelsea", vitorias: 1, empates: 1, derrotas: 2, pontos: 0 }
 
 let equipes = [flamengo, vasco, fluminense]
 
