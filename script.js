@@ -1,87 +1,87 @@
-function calculaPontos(time) {
-    return time.vitorias * 3 + time.empates
+const calculatePoints = (club) => {
+    return club.wins * 3 + club.draws
 }
 
-function adicionarVitoria(i) {
-    let time = equipes[i]
-    time.vitorias++
-    time.pontos = calculaPontos(time)
-    exibeEquipesNaTela(equipes)
+const addWin = (i) => {
+    let club = clubs[i]
+    club.wins++
+    club.points = calculatePoints(club)
+    printClubs(clubs)
 }
   
-function adicionarEmpate(i) {
-    let time = equipes[i]
-    time.empates++
-    time.pontos = calculaPontos(time)
-    exibeEquipesNaTela(equipes)
+const addDraw = (i) => {
+    let club = clubs[i]
+    club.draws++
+    club.points = calculatePoints(club)
+    printClubs(clubs)
 }
   
-function adicionarDerrota(i) {
-    let time = equipes[i]
-    time.derrotas++
-    exibeEquipesNaTela(equipes)
+const addLoss = (i) => {
+    let club = clubs[i]
+    club.losses++
+    printClubs(clubs)
 }
 
-function zerar() {
-    for (let i = 0; i < equipes.length; i++) {
-        let time = equipes[i]
-        time.vitorias = 0
-        time.empates = 0
-        time.derrotas = 0
-        time.pontos = calculaPontos(time)
+const reset = () => {
+    for (let i = 0; i < clubs.length; i++) {
+        let club = clubs[i]
+        club.wins = 0
+        club.draws = 0
+        club.losses = 0
+        club.points = calculatePoints(club)
     }
-    exibeEquipesNaTela(equipes)
+    printClubs(clubs)
 }
 
-function exibeEquipesNaTela(equipes) {
-    let elemento = ""
-    for (let i = 0; i < equipes.length; i++) {
-        elemento += 
-        `<tr><td>${equipes[i].nome}</td>
-        <td>${equipes[i].vitorias}</td>
-        <td>${equipes[i].empates}</td>
-        <td>${equipes[i].derrotas}</td>
-        <td>${equipes[i].pontos}</td>
-        <td><button onClick="adicionarVitoria(${i})">Victory</button></td>
-        <td><button onClick="adicionarEmpate(${i})">Draw</button></td>
-        <td><button onClick="adicionarDerrota(${i})">Defeat</button></td></tr>`
+const printClubs = (clubs) => {
+    let element = ""
+    for (let i = 0; i < clubs.length; i++) {
+        element += 
+        `<tr><td>${clubs[i].name}</td>
+        <td>${clubs[i].wins}</td>
+        <td>${clubs[i].draws}</td>
+        <td>${clubs[i].losses}</td>
+        <td>${clubs[i].points}</td>
+        <td><button onClick="addWin(${i})">W</button></td>
+        <td><button onClick="addDraw(${i})">D</button></td>
+        <td><button onClick="addLoss(${i})">L</button></td></tr>`
     }
-    let tabelaEquipes = document.getElementById("tabelaEquipes")
-    tabelaEquipes.innerHTML = elemento
+    let clubsTable = document.getElementById("clubsTable")
+    clubsTable.innerHTML = element
 }
 
-function adicionarTime() {
-    let nomeTime = capitalizeFirst(document.getElementById('time__nome').value)
-    if (nomeTime === '') {
-        console.error('Nome não digitado')
+const addClub = () => {
+    let clubName = capitalizeFirst(document.getElementById('club__name').value)
+    if (clubName === '') {
+        console.error('name não digitado')
     } else {
-        for (let i = 0; i < equipes.length; i++) {
-            if (equipes[i].nome === nomeTime) {
-                return console.error('Já existe uma equipe com esse nome')
+        for (let i = 0; i < clubs.length; i++) {
+            if (clubs[i].name === clubName) {
+                return console.error('Já existe uma equipe com esse name')
             }
         }
-        let novoTime = { nome: nomeTime, vitorias: 0, empates: 0, derrotas: 0, pontos: 0 }
-        equipes.push(novoTime)
-        exibeEquipesNaTela(equipes)
+        let newClub = { name: clubName, wins: 0, draws: 0, losses: 0, points: 0 }
+        clubs.push(newClub)
+        printClubs(clubs)
     }
 }
 
-function removerTime() {
-    let nomeTime = capitalizeFirst(document.getElementById('time__nome').value)
-    if (nomeTime === '') {
-        console.error('Nome não digitado')
+const removeClub = () => {
+    let clubName = capitalizeFirst(document.getElementById('club__name').value)
+    if (clubName === '') {
+        console.error('name não digitado')
     } else {
-        for (let i = 0; i < equipes.length; i++) {
-            if (equipes[i].nome === nomeTime) {
-                equipes.splice(i, 1)
-                return exibeEquipesNaTela(equipes)
+        for (let i = 0; i < clubs.length; i++) {
+            if (clubs[i].name === clubName) {
+                clubs.splice(i, 1)
+                return printClubs(clubs)
             }
         }
-        console.error('Nome não encontrado')
+        console.error('name não encontrado')
     }
 }
 
-function capitalizeFirst(string) {
+const capitalizeFirst = (string) => {
     let arr = string.split(' ')
     for (let i = 0; i < arr.length; i++) {
         arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
@@ -89,33 +89,43 @@ function capitalizeFirst(string) {
     return arr.join(' ')
 }
 
-/* function validarLogicaDosJogos() {
-    let vitorias = 0
-    let empates = 0
-    let derrotas = 0
-    for (let i = 0; i < equipes.length; i++) {
-        vitorias += equipes[i].vitorias
-        empates += equipes[i].empates
-        derrotas += equipes[i].derrotas
+/* const validarLogicaDosJogos() {
+    let wins = 0
+    let draws = 0
+    let losses = 0
+    for (let i = 0; i < clubs.length; i++) {
+        wins += clubs[i].wins
+        draws += clubs[i].draws
+        losses += clubs[i].losses
     }   
-    console.log(vitorias)
-    console.log(empates)
-    console.log(derrotas)
+    console.log(wins)
+    console.log(draws)
+    console.log(losses)
 } */
 
-let flamengo = { nome: "Manchester United", vitorias: 2, empates: 1, derrotas: 1, pontos: 0 }
-let vasco = { nome: "Arsenal", vitorias: 1, empates: 1, derrotas: 2, pontos: 0 }
-let fluminense = { nome: "Chelsea", vitorias: 1, empates: 1, derrotas: 2, pontos: 0 }
+let manchesterUnited = { name: "Manchester United", wins: 2, draws: 1, losses: 1, points: 0 }
+let arsenal = { name: "Arsenal", wins: 1, draws: 1, losses: 2, points: 0 }
+let chelsea = { name: "Chelsea", wins: 1, draws: 1, losses: 2, points: 0 }
+let liverpool = { name: "Liverpool", wins: 1, draws: 1, losses: 2, points: 0 }
+let manchesterCity = { name: "Manchester City", wins: 1, draws: 1, losses: 2, points: 0 }
+let brighton = { name: "Brighton and Hove Albion", wins: 1, draws: 1, losses: 2, points: 0 }
+let westHam = { name: "West Ham United", wins: 1, draws: 1, losses: 2, points: 0 }
+let astonVilla = { name: "Aston Villa", wins: 1, draws: 1, losses: 2, points: 0 }
+let brentford = { name: "Brentford", wins: 1, draws: 1, losses: 2, points: 0 }
+let tottenham = { name: "Tottenham Hotspur", wins: 1, draws: 1, losses: 2, points: 0 }
 
-let equipes = [flamengo, vasco, fluminense]
 
-flamengo.pontos = calculaPontos(flamengo)
-vasco.pontos = calculaPontos(vasco)
-fluminense.pontos = calculaPontos(fluminense)
+let clubs = [manchesterUnited, arsenal, chelsea, liverpool, 
+    manchesterCity, brighton, westHam, astonVilla, brentford,
+    tottenham]
 
-exibeEquipesNaTela(equipes)
+for (let club of clubs) {
+    club.points = calculatePoints(club)
+}
 
-/* Validar se todos os pontos estão fazendo sentido, tanto o 
-número de empates, quanto derrotas e vitórias com os demais 
-jogadores (impossível haver mais vitórias que derrotas, por exemplo)
+printClubs(clubs)
+
+/* Validar se todos os points estão fazendo sentido, tanto o 
+número de draws, quanto losses e vitórias com os demais 
+jogadores (impossível haver mais vitórias que losses, por exemplo)
 Adicionar a imagem de cada jogador */

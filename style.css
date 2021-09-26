@@ -1,83 +1,67 @@
 * {
     text-align: center;
-  }
+}
   
-  body {
-    font-family: "Roboto Mono", monospace;
-    min-height: 2000px;
-    background-image: url("https://www.telegraph.co.uk/content/dam/betting/Better-Collective/stadium-from-pitch-xlarge.jpg");
-    background-color: #111;
-    background-size: 100%;
-    background-position: initial;
-    background-repeat: repeat-y;
-  }
-  
-  .container {
-    text-align: center;
-    padding: 20px;
-    height: 100vh;
-  }
-  
-  .page-title {
-    color: black;
-    margin: 0 0 5px;
-  }
-  
-  .page-subtitle {
-    color: black;
-    margin-top: 5px;
-  }
-  
-  .page-logo {
-    width: 200px;
-  }
-  
-  .alura-logo {
-    width: 40px;
-    position: absolute;
-    top: 10px;
-    right: 10px;
-  }
-  
-  table {
-    border: 2px solid black;
-    border-collapse: collapse;
-  }
-  
-  h1 {
-    color: white;
-  }
-  
-  th,
-  tr,
-  td {
-    border: solid 1px black;
-    color: white;
-  }
+body {
+  font-family: "Roboto Mono", monospace;
+  background-image: url("https://www.telegraph.co.uk/content/dam/betting/Better-Collective/stadium-from-pitch-xlarge.jpg");
+  background-color: #111;
+  background-size: 100%;
+  background-position: initial;
+  background-repeat: no-repeat;
+}
 
-  .form-wrapper {
-    margin: 10px;
-    font-size: 14px;
-  }
-  
-  .form-wrapper input {
-    margin: 10px auto;
-    padding: 7px 5px;
-    border-radius: 7px;
-    font-weight: bold;
-  }
-  
-  .form-wrapper button {
-    color: black;
-    background: rgba(255, 238, 0, 0.349);
-    font-weight: bold;
-    padding: 7px 25px;
-    border-radius: 7px;
-    margin-top: 5px;
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .form-wrapper button:hover {
-    opacity: 0.8;
-  }
+.container {
+  background-color: white;
+  margin: 80px;
+  border-radius: 90px;
+  text-align: center;
+  padding: 30px;
+  height: 100vh;
+}
+
+.container__tittle {
+  color: black;
+  margin: 0 0 5px;
+}
+
+.container__table {
+  border: 2px solid black;
+  border-collapse: collapse;
+
+}
+
+th,
+tr,
+td {
+  border: solid 1px black;
+  color: black;
+  border-radius: 5px;
+}
+
+.form-wrapper {
+  margin: 10px;
+  font-size: 14px;
+}
+
+.form-wrapper input {
+  margin: 10px auto;
+  padding: 7px 5px;
+  border-radius: 7px;
+  font-weight: bold;
+}
+
+.form-wrapper button {
+  color: black;
+  background: rgba(255, 238, 0, 0.349);
+  font-weight: bold;
+  padding: 7px 25px;
+  border-radius: 7px;
+  margin-top: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form-wrapper button:hover {
+  opacity: 0.8;
+}
