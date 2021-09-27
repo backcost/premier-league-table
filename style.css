@@ -12,23 +12,23 @@ body {
 }
 
 .container {
-  background-color: rgba(255, 255, 255, 0.473);
-  margin: 80px;
+  background-color: rgba(255, 255, 255, 0.596);
+  margin: 30px;
   border-radius: 60px;
   text-align: center;
   padding: 30px;
-  height: 100vh;
+  height: 110vh;
 }
 
-.container__tittle {
-  color: black;
-  margin: 0 0 5px;
+.container__logo {
+  margin-top: -30px;
+  max-height: 120px;
 }
 
 .container__table {
   border: 2px solid black;
   border-collapse: collapse;
-
+  width: 100%;
 }
 
 th,

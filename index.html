@@ -9,12 +9,14 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="container__tittle">Premier League Table</h1>
-    <table class="container__table" style="width:100%">
+    <img class="container__logo" src="https://cdn.freebiesupply.com/images/thumbs/2x/premier-league-logo.png" alt="Premier League badge">
+    <table class="container__table">
       <thead>
         <tr>
+          <th>Pos.</th>
           <th></th>
           <th>Club</th>
+          <th>Played</th>
           <th>Won</th>
           <th>Drawn</th>
           <th>Lost</th>
@@ -26,7 +28,7 @@
     </table>
     <div class="form-wrapper">
       <input type="text" id="club__name" name="club__name" placeholder="Insert Club Name" required>
-      <input type="url" id="club__logo" name="club__logo" placeholder="Logo URL" required>
+      <input type="url" id="club__badge" name="club__badge" placeholder="Badge URL" required>
       <button onClick="addClub()">Add Club</button>
       <button onClick="removeClub()">Remove Club</button>
     </div>
