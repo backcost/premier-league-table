@@ -29,8 +29,8 @@ const printClubs = (clubs) => {
         element += 
         `<tr>
         <td>${Number([i]) + 1}</td>
-        <td><img src="${clubs[i].badge}" alt="${clubs[i].name} badge"></td>
-        <td><a href="https://en.wikipedia.org/wiki/${clubs[i].name}_F.C.">${clubs[i].name}</a></td>
+        <td><img class="table__badges" src="${clubs[i].badge}" alt="${clubs[i].name} badge"></td>
+        <td><a href="https://en.wikipedia.org/wiki/${clubs[i].name}_F.C." target="_blank">${clubs[i].name}</a></td>
         <td>${clubs[i].wins + clubs[i].draws + clubs[i].losses}</td>
         <td>${clubs[i].wins}</td>
         <td>${clubs[i].draws}</td>
@@ -100,7 +100,7 @@ let clubs = [
     { name: "Chelsea", wins: 4, draws: 1, losses: 1, badge: "https://resources.premierleague.com/premierleague/badges/25/t8.png" },
     { name: "Manchester United", wins: 4, draws: 1, losses: 1, badge: "https://resources.premierleague.com/premierleague/badges/25/t1.png" },
     { name: "Everton", wins: 4, draws: 1, losses: 1, badge: "https://resources.premierleague.com/premierleague/badges/25/t11.png" },
-    { name: "Brighton and Hove Albion", wins: 4, draws: 0, losses: 1, badge: "https://resources.premierleague.com/premierleague/badges/25/t36.png" },
+    { name: "Brighton and Hove Albion", wins: 4, draws: 1, losses: 1, badge: "https://resources.premierleague.com/premierleague/badges/25/t36.png" },
     { name: "West Ham United", wins: 3, draws: 2, losses: 1, badge: "https://resources.premierleague.com/premierleague/badges/25/t21.png" },
     { name: "Aston Villa", wins: 3, draws: 1, losses: 2, badge: "https://resources.premierleague.com/premierleague/badges/25/t7.png" },
     { name: "Brentford", wins: 2, draws: 3, losses: 1, badge: "https://resources.premierleague.com/premierleague/badges/25/t94.png" },
@@ -109,7 +109,7 @@ let clubs = [
     { name: "Watford", wins: 2, draws: 1, losses: 3, badge: "https://resources.premierleague.com/premierleague/badges/25/t57.png" },
     { name: "Leicester City", wins: 2, draws: 1, losses: 3, badge: "https://resources.premierleague.com/premierleague/badges/25/t13.png" },
     { name: "Wolverhampton Wanderers", wins: 2, draws: 0, losses: 4, badge: "https://resources.premierleague.com/premierleague/badges/25/t39.png" },
-    { name: "Crystal Palace", wins: 1, draws: 2, losses: 2, badge: "https://resources.premierleague.com/premierleague/badges/25/t31.png" },
+    { name: "Crystal Palace", wins: 1, draws: 3, losses: 2, badge: "https://resources.premierleague.com/premierleague/badges/25/t31.png" },
     { name: "Southampton", wins: 0, draws: 4, losses: 2, badge: "https://resources.premierleague.com/premierleague/badges/25/t20.png" },
     { name: "Newcastle United", wins: 0, draws: 3, losses: 3, badge: "https://resources.premierleague.com/premierleague/badges/25/t4.png" },
     { name: "Leeds United", wins: 0, draws: 3, losses: 3, badge: "https://resources.premierleague.com/premierleague/badges/25/t2.png" },
@@ -120,4 +120,6 @@ let clubs = [
 printClubs(clubs)
 
 /* Validar se a quantidade de jogos faz sentido
+
+Deixar responsivo
 */

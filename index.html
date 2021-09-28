@@ -26,13 +26,14 @@
       </thead>
       <tbody id="clubsTable">
     </table>
-    <div class="form-wrapper">
-      <input type="text" id="club__name" name="club__name" placeholder="Insert Club Name" required>
-      <input type="url" id="club__badge" name="club__badge" placeholder="Badge URL" required>
-      <button onClick="addClub()">Add Club</button>
-      <button onClick="removeClub()">Remove Club</button>
-    </div>
-    <button class="botao__zerar" onClick="reset()">Reset Points</button>
+    <form class="container__form">
+      <input class="form__input" type="text" id="club__name" name="club__name" placeholder="Insert Club Name" required>
+      <input class="form__input" type="url" id="club__badge" name="club__badge" placeholder="Badge URL" required>
+      <br>
+      <button class="form__button" onClick="addClub()">Add Club</button>
+      <button class="form__button" onClick="removeClub()">Remove Club</button>
+    </form>
+    <button class="container__button" onClick="reset()">Reset Points</button>
   </div>
   <script src="script.js"></script>
 </body>
