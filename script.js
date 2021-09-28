@@ -30,7 +30,7 @@ const printClubs = (clubs) => {
         `<tr>
         <td>${Number([i]) + 1}</td>
         <td><img class="table__badges" src="${clubs[i].badge}" alt="${clubs[i].name} badge"></td>
-        <td><a href="https://en.wikipedia.org/wiki/${clubs[i].name}_F.C." target="_blank">${clubs[i].name}</a></td>
+        <td class="table__NameColumn"><a href="https://en.wikipedia.org/wiki/${clubs[i].name}_F.C." target="_blank">${clubs[i].name}</a></td>
         <td class="table__PGColumn">${clubs[i].wins + clubs[i].draws + clubs[i].losses}</td>
         <td class="table__WColumn">${clubs[i].wins}</td>
         <td class="table__DColumn">${clubs[i].draws}</td>
@@ -120,6 +120,4 @@ let clubs = [
 printClubs(clubs)
 
 /* Validar se a quantidade de jogos faz sentido
-
-Deixar responsivo
 */
