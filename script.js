@@ -36,9 +36,9 @@ const printClubs = (clubs) => {
         <td>${clubs[i].draws}</td>
         <td>${clubs[i].losses}</td>
         <td>${clubs[i].wins * 3 + clubs[i].draws}</td>
-        <td><button onClick="addWin(${i})">W</button></td>
-        <td><button onClick="addDraw(${i})">D</button></td>
-        <td><button onClick="addLoss(${i})">L</button></td>
+        <td><button class="table__Wbutton" onClick="addWin(${i})">W</button></td>
+        <td><button class="table__Dbutton" onClick="addDraw(${i})">D</button></td>
+        <td><button class="table__Lbutton" onClick="addLoss(${i})">L</button></td>
         </tr>`
     }
     document.getElementById("clubsTable").innerHTML = element
