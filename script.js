@@ -31,11 +31,11 @@ const printClubs = (clubs) => {
         <td>${Number([i]) + 1}</td>
         <td><img class="table__badges" src="${clubs[i].badge}" alt="${clubs[i].name} badge"></td>
         <td><a href="https://en.wikipedia.org/wiki/${clubs[i].name}_F.C." target="_blank">${clubs[i].name}</a></td>
-        <td>${clubs[i].wins + clubs[i].draws + clubs[i].losses}</td>
-        <td>${clubs[i].wins}</td>
-        <td>${clubs[i].draws}</td>
-        <td>${clubs[i].losses}</td>
-        <td>${clubs[i].wins * 3 + clubs[i].draws}</td>
+        <td class="table__PGColumn">${clubs[i].wins + clubs[i].draws + clubs[i].losses}</td>
+        <td class="table__WColumn">${clubs[i].wins}</td>
+        <td class="table__DColumn">${clubs[i].draws}</td>
+        <td class="table__LColumn">${clubs[i].losses}</td>
+        <td class="table__PointsColumn">${clubs[i].wins * 3 + clubs[i].draws}</td>
         <td><button class="table__Wbutton" onClick="addWin(${i})">W</button></td>
         <td><button class="table__Dbutton" onClick="addDraw(${i})">D</button></td>
         <td><button class="table__Lbutton" onClick="addLoss(${i})">L</button></td>

@@ -106,3 +106,23 @@ td {
   cursor: pointer;
   transition: 0.3s;
 }
+
+@media (max-width: 730px) {
+  .table__PGColumn, .table__WColumn, .table__DColumn, 
+  .table__LColumn, .table__PGTittle, .table__WTittle, .table__DTittle,
+  .table__LTittle {
+    display: none;
+  }
+
+  .container {
+   font-size: 12px;
+   padding: 6px;
+   margin: 3px;
+  }
+}
+
+@media (max-width: 1050px) {
+  .table__PGColumn, .table__PGTittle {
+    display: none;
+  }
+}
