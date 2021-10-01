@@ -1,16 +1,37 @@
 const addWin = (i) => {
+    let clubName = clubs[i].name
     clubs[i].wins++
     printClubs(clubs)
+    disableButtons("Wbutton", "Dbutton", `${clubName}Lbutton`)
 }
   
 const addDraw = (i) => {
+    let clubName = clubs[i].name
     clubs[i].draws++
     printClubs(clubs)
+    disableButtons("Wbutton", "Lbutton", `${clubName}Dbutton`)
 }
   
 const addLoss = (i) => {
+    let clubName = clubs[i].name
     clubs[i].losses++
     printClubs(clubs)
+    disableButtons("Lbutton", "Dbutton", `${clubName}Wbutton`)
+}
+
+let counter = 0
+const disableButtons = (disabled1, disabled2, disabled3) => {
+    for (let i = 0; i < clubs.length; i++) {
+        document.getElementById(`${clubs[i].name}${disabled1}`).disabled = true
+        document.getElementById(`${clubs[i].name}${disabled2}`).disabled = true
+    }
+    document.getElementById(disabled3).disabled = true
+
+    counter++
+    if (counter === 2) {
+        counter = 0
+        printClubs(clubs)
+    }
 }
 
 const reset = () => {
@@ -36,9 +57,9 @@ const printClubs = (clubs) => {
         <td class="table__DColumn">${clubs[i].draws}</td>
         <td class="table__LColumn">${clubs[i].losses}</td>
         <td class="table__PointsColumn">${clubs[i].wins * 3 + clubs[i].draws}</td>
-        <td><button class="table__Wbutton" onClick="addWin(${i})">W</button></td>
-        <td><button class="table__Dbutton" onClick="addDraw(${i})">D</button></td>
-        <td><button class="table__Lbutton" onClick="addLoss(${i})">L</button></td>
+        <td><button class="table__Wbutton" id="${clubs[i].name}Wbutton" onClick="addWin(${i})">W</button></td>
+        <td><button class="table__Dbutton"  id="${clubs[i].name}Dbutton" onClick="addDraw(${i})">D</button></td>
+        <td><button class="table__Lbutton" id="${clubs[i].name}Lbutton" onClick="addLoss(${i})">L</button></td>
         </tr>`
     }
     document.getElementById("clubsTable").innerHTML = element
