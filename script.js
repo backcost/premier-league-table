@@ -21,16 +21,16 @@ const addLoss = (i) => {
 
 let counter = 0
 const disableButtons = (disabled1, disabled2, disabled3) => {
-    for (let i = 0; i < clubs.length; i++) {
-        document.getElementById(`${clubs[i].name}${disabled1}`).disabled = true
-        document.getElementById(`${clubs[i].name}${disabled2}`).disabled = true
-    }
-    document.getElementById(disabled3).disabled = true
-
     counter++
     if (counter === 2) {
         counter = 0
         printClubs(clubs)
+    } else {
+        for (let i = 0; i < clubs.length; i++) {
+            document.getElementById(`${clubs[i].name}${disabled1}`).disabled = true
+            document.getElementById(`${clubs[i].name}${disabled2}`).disabled = true
+        }
+        document.getElementById(disabled3).disabled = true
     }
 }
 
@@ -139,6 +139,3 @@ let clubs = [
 ]
 
 printClubs(clubs)
-
-/* Validar se a quantidade de jogos faz sentido
-*/
